@@ -139,7 +139,7 @@ vim.api.nvim_set_hl(0, "PmenuSel", _multi_2(_BG_AS_FG, _WHITE_BG))
 -- Not sure if I need these
 -- vim.api.nvim_set_hl(0, "PmenuSbar", _SPECIAL_GRAY_BG)
 -- vim.api.nvim_set_hl(0, "PmenuThumb", _WHITE_50_BG)
-vim.api.nvim_set_hl(0, "Question", _YELLOW_FG)
+vim.api.nvim_set_hl(0, "Question", _NOTE_10_FG)
 vim.api.nvim_set_hl(0, "QuickFixLine", _multi_2(_SEARCH_FG, _SEARCH_BG))
 vim.api.nvim_set_hl(0, "Search", _multi_2(_SEARCH_FG, _TITLE_BG))  -- Matching search text
 vim.api.nvim_set_hl(0, "SignColumn", _BG)
