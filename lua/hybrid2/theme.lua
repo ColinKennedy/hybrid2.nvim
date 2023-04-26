@@ -174,30 +174,6 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 -- qfLineNr
 -- qfError
 
-
--- Match trailing whitespaces
---
--- Reference: https://vim.fandom.com/wiki/Highlight_unwanted_spaces
---
-vim.api.nvim_set_hl(0, "ExtraWhitespace", _multi_2(_ERROR_50_BG, _UNDERLINE))
-vim.api.nvim_create_autocmd(
-    {"BufRead", "BufNew", "FileType", "TermOpen"},
-    {
-	pattern = "*",
-	callback = function()
-	    if vim.bo.buftype == "terminal"
-	    then
-		vim.cmd[[match ExtraWhitespace /^^/]]
-
-		return
-	    end
-
-	    vim.cmd[[match ExtraWhitespace /\s\+$/]]
-	end
-    }
-)
-
-
 -- Plugin - https://github.com/nvim-treesitter/nvim-treesitter
 vim.api.nvim_set_hl(0, "@punctuation", _WHITE)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
