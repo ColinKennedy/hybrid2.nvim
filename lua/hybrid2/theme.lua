@@ -3,7 +3,7 @@
 local _extend = function(table_to_modify, items)
     for key, value in pairs(items)
     do
-	table_to_modify[key] = value
+        table_to_modify[key] = value
     end
 end
 
@@ -45,12 +45,13 @@ local _KHAKI_GREEN = {fg="#b5bd68", ctermfg=143}
 local _PURPLE_20_FG = {fg="#b294bb", ctermfg=139}
 local _PURPLE_50_BG = {bg="#5f005f", ctermbg=53}
 local _WHITE_BG = {bg="#abb2bf", ctermbg=249}
-local _WHITE = {fg="#abb2bf", ctermfg=249}
+local _WHITE_FG = {fg="#abb2bf", ctermfg=249}
 local _WHITE_10_FG = {fg="#1d1f21", ctermfg=234}
 local _YELLOW_FG = {fg="#b5bd68", ctermfg=143}
 
 -- Controller Variables - Purposes
 local _BG = {bg="#1c1c1c", ctermbg=234}
+local _BG_DARKER_20 = {ctermbg=16, bg="#111111"}  -- Like _BG, but much darker
 local _BG_AS_FG = {fg="#1c1c1c", ctermfg=234}
 local _COMMENT = {fg="#707880", ctermfg=243}
 local _COMMENT_30_BG = {bg="#707880", ctermbg=243}
@@ -86,7 +87,8 @@ local _UNDERLINE = {gui=underline, cterm=underline}
 
 
 -- General
-vim.api.nvim_set_hl(0, "Normal", {fg="#abb2bf", ctermfg=249, bg="#1c1c1c", ctermbg=234}) -- TODO: fix
+vim.api.nvim_set_hl(0, "Normal", _multi_2(_BG, _WHITE_FG))  -- BG color
+vim.api.nvim_set_hl(0, "NormalFloat", _BG_DARKER_20)  -- Floating BG color
 vim.api.nvim_set_hl(0, "Boolean", _CONSTANT_FG)
 vim.api.nvim_set_hl(0, "Character", _CONSTANT_FG)
 vim.api.nvim_set_hl(0, "Comment", _COMMENT)
@@ -97,7 +99,7 @@ vim.api.nvim_set_hl(0, "Error", _multi_2(_ERROR_FG, _ERROR_50_BG))
 vim.api.nvim_set_hl(0, "Exception", _STATEMENT)
 vim.api.nvim_set_hl(0, "Float", _CONSTANT_FG)
 vim.api.nvim_set_hl(0, "Function", _TITLE_FG)
-vim.api.nvim_set_hl(0, "Identifier", _WHITE)
+vim.api.nvim_set_hl(0, "Identifier", _WHITE_FG)
 vim.api.nvim_set_hl(0, "Include", _STATEMENT)
 vim.api.nvim_set_hl(0, "Keyword", _STATEMENT)
 vim.api.nvim_set_hl(0, "Label", _STATEMENT)
@@ -150,6 +152,7 @@ vim.api.nvim_set_hl(0, "SpellLocal", _multi_3(_CYAN_10_FG, _CYAN_30_BG, _UNDERLI
 vim.api.nvim_set_hl(0, "SpellRare", _multi_3(_PURPLE_20_FG, _PURPLE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "StatusLine", _multi_3(_COMMENT, _SEARCH_BG, _REVERSE))
 vim.api.nvim_set_hl(0, "StatusLineNC", _multi_3(_VERT_SPLIT_FG, _LINE_GRAY_BG, _REVERSE))
+vim.api.nvim_set_hl(0, "TabLine", _GRAY_30_BG)
 vim.api.nvim_set_hl(0, "TabLineFill", _REVERSE)
 vim.api.nvim_set_hl(0, "TermCursor", _multi_2(_BG_AS_FG, _WHITE_BG))
 vim.api.nvim_set_hl(0, "TabLineSel", _BOLD)
@@ -175,7 +178,8 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 -- qfError
 
 -- Plugin - https://github.com/nvim-treesitter/nvim-treesitter
-vim.api.nvim_set_hl(0, "@punctuation", _WHITE)
+vim.api.nvim_set_hl(0, "@namespace", _COMMENT)
+vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
 -- Treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
