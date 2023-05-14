@@ -61,6 +61,7 @@ local _DIFF_CHANGE_FG = {fg="#d7d7ff", ctermfg=189}
 local _ERROR_50_BG = {bg="#5f0000", ctermbg=52}
 local _ERROR_BG = {bg="#cc6666", ctermbg=167}
 local _ERROR_FG = {fg="#cc6666", ctermfg=167}
+local _KNOWN_VARIABLE = {fg="#B294BB", ctermfg=216}  -- LightSalmon1
 local _LINE_GRAY_BG = {bg="#707880", ctermbg=243}
 local _MENU_GRAY_BG = {bg="#373b41", ctermbg=237}
 local _NON_TEXT_FG = {fg="#373b41", ctermfg=237}
@@ -70,6 +71,7 @@ local _SEARCH_BG = {bg="#1d1f21", ctermbg=234}
 local _SEARCH_FG = {fg="#1d1f21", ctermfg=234}
 local _SPECIAL_GRAY_BG = {bg="#3b4048", ctermbg=238}
 local _SPECIAL_GRAY_FG = {fg="#3b4048", ctermfg=238}
+local _SPECIAL_VARIABLE = {fg="#FF4400", ctermfg=96}  -- Pale purple / Plum4
 local _STATEMENT = {fg="#81a2be", ctermfg=109}
 local _TITLE_BG = {bg="#f0c674", ctermbg=222}
 local _TITLE_FG = {fg="#f0c674", ctermfg=222}
@@ -177,11 +179,16 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 -- qfLineNr
 -- qfError
 
--- Plugin - https://github.com/nvim-treesitter/nvim-treesitter
+-- nvim-treesitter settings
+--
+-- https://github.com/nvim-treesitter/nvim-treesitter
+--
 vim.api.nvim_set_hl(0, "@namespace", _COMMENT)
 vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
--- Treesitter - Language Specific
+vim.api.nvim_set_hl(0, "@text.uri", _SPECIAL_VARIABLE)
+vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
+-- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
 
 -- Plugin - https://github.com/airblade/vim-gitgutter
