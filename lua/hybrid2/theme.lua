@@ -188,6 +188,7 @@ vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
 vim.api.nvim_set_hl(0, "@text.uri", _SPECIAL_VARIABLE)
 vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
+vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
 -- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
 
@@ -202,6 +203,7 @@ vim.api.nvim_set_hl(0, "GitGutterDeleteInvisible", {bg="Grey", ctermbg=242})
 -- Special: Disable line highlighting of the cursor row BUT highlight the current line as a color
 --
 -- Reference: https://stackoverflow.com/a/26205823
+-- Reference: https://www.reddit.com/r/neovim/comments/16zjizx/comment/k3ey1rt/?utm_source=share&utm_medium=web2x&context=3
 --
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=nil, ctermbg=nil, ctermfg=nil, bg=nil, fg=nil})
 vim.api.nvim_set_hl(0, "CursorColumn", _BLACK_50_BG)
