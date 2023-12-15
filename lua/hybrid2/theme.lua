@@ -189,8 +189,11 @@ vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
 vim.api.nvim_set_hl(0, "@text.uri", _SPECIAL_VARIABLE)
 vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
 vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
+
 -- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
+vim.api.nvim_set_hl(0, "@text.diff.add.diff", {link="DiffAdd"})
+vim.api.nvim_set_hl(0, "@text.diff.delete.diff", {link="DiffDelete"})
 
 -- Plugin - https://github.com/airblade/vim-gitgutter
 vim.api.nvim_set_hl(0, "GitGutterAdd", _NOTE_DIFF_ADD_10_FG)
