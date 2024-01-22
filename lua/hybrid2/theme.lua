@@ -183,12 +183,13 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 --
 -- https://github.com/nvim-treesitter/nvim-treesitter
 --
+vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
+vim.api.nvim_set_hl(0, "@function.builtin", _KNOWN_VARIABLE)
 vim.api.nvim_set_hl(0, "@namespace", _COMMENT)
 vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
 vim.api.nvim_set_hl(0, "@text.uri", _SPECIAL_VARIABLE)
 vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
-vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
 
 -- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
