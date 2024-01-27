@@ -185,6 +185,8 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 --
 vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
 vim.api.nvim_set_hl(0, "@function.builtin", _KNOWN_VARIABLE)
+vim.api.nvim_set_hl(0, "@markup.link", _SPECIAL_VARIABLE)
+vim.api.nvim_set_hl(0, "@markup.raw", _STATEMENT)
 vim.api.nvim_set_hl(0, "@namespace", _COMMENT)
 vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
