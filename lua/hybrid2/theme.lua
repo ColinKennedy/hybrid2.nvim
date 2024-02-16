@@ -196,6 +196,10 @@ vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
 
 -- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
+vim.api.nvim_set_hl(0, "@diff.add.diff", {link="DiffAdd"})
+vim.api.nvim_set_hl(0, "@diff.delete.diff", {link="DiffDelete"})
+vim.api.nvim_set_hl(0, "@diff.minus.diff", {link="DiffDelete"})
+vim.api.nvim_set_hl(0, "@diff.plus.diff", {link="DiffAdd"})
 vim.api.nvim_set_hl(0, "@text.diff.add.diff", {link="DiffAdd"})
 vim.api.nvim_set_hl(0, "@text.diff.delete.diff", {link="DiffDelete"})
 
