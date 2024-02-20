@@ -237,6 +237,14 @@ vim.api.nvim_set_hl(0, "@diff.minus.diff", {link="DiffDelete"})
 vim.api.nvim_set_hl(0, "@diff.plus.diff", {link="DiffAdd"})
 vim.api.nvim_set_hl(0, "@text.diff.add.diff", {link="DiffAdd"})
 vim.api.nvim_set_hl(0, "@text.diff.delete.diff", {link="DiffDelete"})
+vim.api.nvim_set_hl(0, "@markup.heading.1", {fg=_SECTION_10})
+vim.api.nvim_set_hl(0, "@markup.heading.2", {fg=_SECTION_20})
+vim.api.nvim_set_hl(0, "@markup.heading.3", {fg=_SECTION_30})
+vim.api.nvim_set_hl(0, "@markup.heading.4", {fg=_SECTION_40})
+vim.api.nvim_set_hl(0, "@markup.heading.5", {fg=_SECTION_50})
+vim.api.nvim_set_hl(0, "@markup.heading.6", {fg=_SECTION_60})
+-- Neovim 0.10+ ships Python queries that break backwards compatibility
+vim.api.nvim_set_hl(0, "@variable", {link="Identifier"})
 
 -- Plugin - https://github.com/airblade/vim-gitgutter
 vim.api.nvim_set_hl(0, "GitGutterAdd", _NOTE_DIFF_ADD_10_FG)
