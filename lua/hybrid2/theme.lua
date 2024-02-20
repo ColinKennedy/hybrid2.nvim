@@ -188,11 +188,12 @@ vim.api.nvim_set_hl(0, "SpellLocal", _multi_3(_CYAN_10_FG, _CYAN_30_BG, _UNDERLI
 vim.api.nvim_set_hl(0, "SpellRare", _multi_3(_PURPLE_20_FG, _PURPLE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "StatusLine", _multi_3(_COMMENT, _SEARCH_BG, _REVERSE))
 vim.api.nvim_set_hl(0, "StatusLineNC", _multi_3(_VERT_SPLIT_FG, _LINE_GRAY_BG, _REVERSE))
+vim.api.nvim_set_hl(0, "WinSeparator", _VERT_SPLIT_FG)
 vim.api.nvim_set_hl(0, "TabLine", _GRAY_30_BG)
 vim.api.nvim_set_hl(0, "TabLineFill", _REVERSE)
 vim.api.nvim_set_hl(0, "TermCursor", _multi_2(_BG_AS_FG, _WHITE_BG))
 vim.api.nvim_set_hl(0, "TabLineSel", _BOLD)
-vim.api.nvim_set_hl(0, "VertSplit", _VERT_SPLIT_FG)
+vim.api.nvim_set_hl(0, "VertSplit", {link="WinSeparator"})
 vim.api.nvim_set_hl(0, "Visual", _VISUAL_GRAY_BG)
 vim.api.nvim_set_hl(0, "VisualNOS", _VISUAL_GRAY_FG)
 
@@ -251,7 +252,7 @@ vim.api.nvim_set_hl(0, "GitGutterDeleteInvisible", {bg="Grey", ctermbg=242})
 -- Reference: https://www.reddit.com/r/neovim/comments/16zjizx/comment/k3ey1rt/?utm_source=share&utm_medium=web2x&context=3
 --
 vim.api.nvim_set_hl(0, "CursorLine", {cterm=nil, ctermbg=nil, ctermfg=nil, bg=nil, fg=nil})
-vim.api.nvim_set_hl(0, "CursorColumn", _BLACK_50_BG)
+vim.api.nvim_set_hl(0, "CursorColumn", _BLACK_30_BG)
 vim.api.nvim_set_hl(0, "CursorLineNr", _TITLE_FG)
 vim.cmd[[set cursorline]]
 
