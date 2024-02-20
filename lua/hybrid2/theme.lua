@@ -32,60 +32,97 @@ end
 
 vim.cmd[[set background=dark]]
 
+-- General Palette. Make sure these colors look good!
+local _BLACK_20 = "#2c323c"
+local _BLACK_30 = "#282a2e"
+local _BLACK_50 = "#1d1f21"
+
+local _WHITE = "#abb2bf"
+
+local _GRAY_10 = "#c0c0c0"
+local _GRAY_20 = "#707880"
+local _GRAY_30 = "#6c6c6c"
+local _GRAY_50 = "#373b41"
+
+-- Used for errors
+local _RED_10 = "#cc6666"
+local _RED_20 = "#5f0000"
+
+-- Colors that denote "sections"
+local _SECTION_10 = "#de935f"
+local _SECTION_20 = "#DF8239"
+local _SECTION_30 = "#f0c674"
+local _SECTION_40 = "#f0e4c8"
+local _SECTION_50 = "#cccccc"
+local _SECTION_60 = "#ffffff"
+
+-- "Base" colors, used for "normal" situations
+local _GREEN_10 = "#b5bd68"
+local _GREEN_30 = "#5f875f"
+
+-- Typically used for "builtin" colors
+local _PURPLE_10 = "#d7d7ff"
+local _PURPLE_30 = "#b294bb"
+local _PURPLE_50 = "#5f005f"
+local _COOL_BLUE_10 = "#81a2be"
+local _COOL_BLUE_20 = "#005f5f"
+
+-- Special purpose, "don't use these too often" colors
+local _ACCENT_ATTENTION_NORMAL = "#d7ffaf"
+local _ACCENT_DEEP_BLUE_10 = "#00005f"
+local _ACCENT_COOL_GRAY = "#5f5f87"
+local _ACCENT_CRITICAL_10 = "#FF4400"
+
 -- Controller Variables - Colors
-local _BLACK_50_BG = {bg="#282a2e", ctermbg=235}
-local _BLUE_50_BG = {bg="#00005f", ctermbg=17}
-local _COOL_GRAY_BG = {bg="#5f5f87", ctermbg=60}
-local _CYAN_10_BG= {bg="#81a2be", ctermbg=109}
-local _CYAN_10_FG = {fg="#81a2be", ctermfg=109}
-local _CYAN_30_BG = {bg="#005f5f", ctermbg=23}
-local _GRAY_20_FG = {fg="#c0c0c0", ctermfg=250}
-local _GRAY_30_BG = {bg="#6c6c6c", ctermbg=242}
-local _KHAKI_GREEN = {fg="#b5bd68", ctermfg=143}
-local _PURPLE_20_FG = {fg="#b294bb", ctermfg=139}
-local _PURPLE_50_BG = {bg="#5f005f", ctermbg=53}
-local _WHITE_BG = {bg="#abb2bf", ctermbg=249}
-local _WHITE_FG = {fg="#abb2bf", ctermfg=249}
-local _WHITE_10_FG = {fg="#1d1f21", ctermfg=234}
-local _YELLOW_FG = {fg="#b5bd68", ctermfg=143}
+local _BLACK_30_BG = {bg=_BLACK_30, ctermbg=235}
+local _ACCENT_BLUE_50_BG = {bg=_ACCENT_DEEP_BLUE_10, ctermbg=17}
+local _ACCENT_COOL_GRAY_BG = {bg=_ACCENT_COOL_GRAY, ctermbg=60}
+local _CYAN_10_BG= {bg=_COOL_BLUE_10, ctermbg=109}
+local _CYAN_10_FG = {fg=_COOL_BLUE_10, ctermfg=109}
+local _CYAN_30_BG = {bg=_COOL_BLUE_20, ctermbg=23}
+local _GRAY_20_FG = {fg=_GRAY_10, ctermfg=250}
+local _GRAY_30_BG = {bg=_GRAY_30, ctermbg=242}
+local _KHAKI_GREEN = {fg=_GREEN_10, ctermfg=143}
+local _PURPLE_20_FG = {fg=_PURPLE_30, ctermfg=139}
+local _PURPLE_50_BG = {bg=_PURPLE_50, ctermbg=53}
+local _WHITE_BG = {bg=_WHITE, ctermbg=249}
+local _WHITE_FG = {fg=_WHITE, ctermfg=249}
+local _WHITE_10_FG = {fg=_BLACK_50, ctermfg=234}
 
 -- Controller Variables - Purposes
-local _BG = {bg="#1c1c1c", ctermbg=234}
+local _BG = {bg=_BLACK_50, ctermbg=234}
 local _BG_DARKER_20 = {ctermbg=16, bg="#111111"}  -- Like _BG, but much darker
-local _BG_AS_FG = {fg="#1c1c1c", ctermfg=234}
-local _COMMENT = {fg="#707880", ctermfg=243}
-local _COMMENT_30_BG = {bg="#707880", ctermbg=243}
-local _CONSTANT_FG = {fg="#cc6666", ctermfg=167}
-local _CURSOR_GRAY_FG = {fg="#2c323c", ctermfg=236}
-local _DIFF_CHANGE_FG = {fg="#d7d7ff", ctermfg=189}
-local _ERROR_50_BG = {bg="#5f0000", ctermbg=52}
-local _ERROR_BG = {bg="#cc6666", ctermbg=167}
-local _ERROR_FG = {fg="#cc6666", ctermfg=167}
-local _KNOWN_VARIABLE = {fg="#B294BB", ctermfg=216}  -- LightSalmon1
-local _LINE_GRAY_BG = {bg="#707880", ctermbg=243}
-local _MENU_GRAY_BG = {bg="#373b41", ctermbg=237}
-local _NON_TEXT_FG = {fg="#373b41", ctermfg=237}
-local _NOTE_10_FG = {fg="#d7ffaf", ctermfg=193}
+local _BG_AS_FG = {fg=_BLACK_50, ctermfg=234}
+local _COMMENT = {fg=_GRAY_20, ctermfg=243}
+local _CONSTANT_FG = {fg=_RED_10, ctermfg=167}
+local _CURSOR_GRAY_FG = {fg=_BLACK_20, ctermfg=236}
+local _DIFF_CHANGE_FG = {fg=_PURPLE_10, ctermfg=189}
+local _ERROR_50_BG = {bg=_RED_20, ctermbg=52}
+local _ERROR_BG = {bg=_RED_10, ctermbg=167}
+local _ERROR_FG = {fg=_RED_10, ctermfg=167}
+local _KNOWN_VARIABLE = {fg=_PURPLE_30, ctermfg=216}  -- LightSalmon1
+local _LINE_GRAY_BG = {bg=_GRAY_20, ctermbg=243}
+local _MENU_GRAY_BG = {bg=_GRAY_50, ctermbg=237}
+local _NON_TEXT_FG = {fg=_GRAY_50, ctermfg=237}
+local _NOTE_10_FG = {fg=_ACCENT_ATTENTION_NORMAL, ctermfg=193}
 local _NOTE_DIFF_ADD_10_FG = _NOTE_10_FG
-local _SEARCH_BG = {bg="#1d1f21", ctermbg=234}
-local _SEARCH_FG = {fg="#1d1f21", ctermfg=234}
-local _SPECIAL_GRAY_BG = {bg="#3b4048", ctermbg=238}
-local _SPECIAL_GRAY_FG = {fg="#3b4048", ctermfg=238}
-local _SPECIAL_VARIABLE = {fg="#FF4400", ctermfg=96}  -- Pale purple / Plum4
-local _STATEMENT = {fg="#81a2be", ctermfg=109}
-local _TITLE_BG = {bg="#f0c674", ctermbg=222}
-local _TITLE_FG = {fg="#f0c674", ctermfg=222}
-local _TYPE = {fg="#de935f", ctermfg=173}
-local _VERT_SPLIT_FG = {fg="#303030", ctermfg=236}
-local _VISUAL_GRAY_BG = {bg="#373b41", ctermbg=237}
-local _VISUAL_GRAY_FG = {fg="#373b41", ctermfg=237}
-local _WHITE_50_BG = {bg="#ffffff", ctermbg=231}
+local _SEARCH_BG = {bg=_BLACK_50, ctermbg=234}
+local _SEARCH_FG = {fg=_BLACK_50, ctermfg=234}
+local _SPECIAL_GRAY_FG = {fg=_GRAY_50, ctermfg=238}
+local _SPECIAL_VARIABLE = {fg=_ACCENT_CRITICAL_10, ctermfg=96}
+local _STATEMENT = {fg=_COOL_BLUE_10, ctermfg=109}
+local _TITLE_BG = {bg=_SECTION_30, ctermbg=222}
+local _TITLE_FG = {fg=_SECTION_30, ctermfg=222}
+local _TYPE = {fg=_SECTION_10, ctermfg=173}
+local _VERT_SPLIT_FG = {fg=_GRAY_50, ctermfg=236}
+local _VISUAL_GRAY_BG = {bg=_GRAY_50, ctermbg=237}
+local _VISUAL_GRAY_FG = {fg=_GRAY_50, ctermfg=237}
 
 -- Controller Variables - Miscellaneous
-local _BOLD = {gui=bold, cterm=bold}
+local _BOLD = {bold = true}
 local _NONE = {cterm=nil, gui=nil}  -- Use this to disable highlighting on a group
-local _REVERSE = {gui=reverse, cterm=reverse}
-local _UNDERLINE = {gui=underline, cterm=underline}
+local _REVERSE = {reverse = true}
+local _UNDERLINE = {underline = true}
 
 
 -- General
@@ -123,10 +160,10 @@ vim.api.nvim_set_hl(0, "Type", _TYPE)
 vim.api.nvim_set_hl(0, "Typedef", _STATEMENT)
 vim.api.nvim_set_hl(0, "Underlined", _multi_2(_CYAN_10_FG, {gui=underline, cterm=underline}))
 vim.api.nvim_set_hl(0, "Cursor", {gui=reverse, cterm=reverse})
-vim.api.nvim_set_hl(0, "ColorColumn", _BLACK_50_BG)
+vim.api.nvim_set_hl(0, "ColorColumn", _BLACK_30_BG)
 vim.api.nvim_set_hl(0, "Conceal", _multi_2(_GRAY_20_FG, _GRAY_30_BG))
-vim.api.nvim_set_hl(0, "DiffAdd", _multi_2(_NOTE_10_FG, {bg="#5f875f", ctermbg=65}))
-vim.api.nvim_set_hl(0, "DiffChange", _multi_2(_DIFF_CHANGE_FG, _COOL_GRAY_BG))
+vim.api.nvim_set_hl(0, "DiffAdd", _multi_2(_NOTE_10_FG, {bg=_GREEN_30, ctermbg=65}))
+vim.api.nvim_set_hl(0, "DiffChange", _multi_2(_DIFF_CHANGE_FG, _ACCENT_COOL_GRAY_BG))
 vim.api.nvim_set_hl(0, "DiffDelete", _multi_2(_SEARCH_FG, _ERROR_BG))
 vim.api.nvim_set_hl(0, "DiffText", _multi_2(_WHITE_10_FG, _CYAN_10_BG))
 vim.api.nvim_set_hl(0, "Directory", _CYAN_10_FG)
@@ -136,20 +173,17 @@ vim.api.nvim_set_hl(0, "FoldColumn", _BG)
 vim.api.nvim_set_hl(0, "Folded", _COMMENT)
 vim.api.nvim_set_hl(0, "IncSearch", {link="Search"})
 vim.api.nvim_set_hl(0, "LineNr", _CURSOR_GRAY_FG)
-vim.api.nvim_set_hl(0, "MatchParen", _multi_2(_WHITE_10_FG, _COOL_GRAY_BG))
+vim.api.nvim_set_hl(0, "MatchParen", _multi_2(_WHITE_10_FG, _ACCENT_COOL_GRAY_BG))
 vim.api.nvim_set_hl(0, "NonText", _NON_TEXT_FG)
 vim.api.nvim_set_hl(0, "Pmenu", _multi_2(_GRAY_20_FG, _MENU_GRAY_BG))
 vim.api.nvim_set_hl(0, "PmenuSel", _multi_2(_BG_AS_FG, _WHITE_BG))
--- Not sure if I need these
--- vim.api.nvim_set_hl(0, "PmenuSbar", _SPECIAL_GRAY_BG)
--- vim.api.nvim_set_hl(0, "PmenuThumb", _WHITE_50_BG)
 vim.api.nvim_set_hl(0, "Question", _NOTE_10_FG)
 vim.api.nvim_set_hl(0, "QuickFixLine", _multi_2(_SEARCH_FG, _SEARCH_BG))
 vim.api.nvim_set_hl(0, "Search", _multi_2(_SEARCH_FG, _TITLE_BG))  -- Matching search text
 vim.api.nvim_set_hl(0, "SignColumn", _BG)
 vim.api.nvim_set_hl(0, "SpecialKey", _SPECIAL_GRAY_FG)
 vim.api.nvim_set_hl(0, "SpellBad", _multi_3(_ERROR_FG, _ERROR_50_BG, _UNDERLINE))
-vim.api.nvim_set_hl(0, "SpellCap", _multi_3(_CYAN_10_FG, _BLUE_50_BG, _UNDERLINE))
+vim.api.nvim_set_hl(0, "SpellCap", _multi_3(_CYAN_10_FG, _ACCENT_BLUE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "SpellLocal", _multi_3(_CYAN_10_FG, _CYAN_30_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "SpellRare", _multi_3(_PURPLE_20_FG, _PURPLE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "StatusLine", _multi_3(_COMMENT, _SEARCH_BG, _REVERSE))
