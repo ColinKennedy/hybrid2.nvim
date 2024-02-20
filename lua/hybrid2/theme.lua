@@ -188,6 +188,8 @@ vim.api.nvim_set_hl(0, "SpellLocal", _multi_3(_CYAN_10_FG, _CYAN_30_BG, _UNDERLI
 vim.api.nvim_set_hl(0, "SpellRare", _multi_3(_PURPLE_20_FG, _PURPLE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "StatusLine", _multi_3(_COMMENT, _SEARCH_BG, _REVERSE))
 vim.api.nvim_set_hl(0, "StatusLineNC", _multi_3(_VERT_SPLIT_FG, _LINE_GRAY_BG, _REVERSE))
+vim.api.nvim_set_hl(0, "WinBar", {bold=true})
+vim.api.nvim_set_hl(0, "WinBarNC", {link="WinBar"})
 vim.api.nvim_set_hl(0, "WinSeparator", _VERT_SPLIT_FG)
 vim.api.nvim_set_hl(0, "TabLine", _GRAY_30_BG)
 vim.api.nvim_set_hl(0, "TabLineFill", _REVERSE)
