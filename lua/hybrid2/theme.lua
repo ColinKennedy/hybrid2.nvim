@@ -133,6 +133,7 @@ vim.api.nvim_set_hl(0, "Comment", _COMMENT)
 vim.api.nvim_set_hl(0, "Conceal", _multi_2(_GRAY_20_FG, _GRAY_30_BG))
 vim.api.nvim_set_hl(0, "Conditional", _STATEMENT)
 vim.api.nvim_set_hl(0, "Constant", _CONSTANT_FG)
+vim.api.nvim_set_hl(0, "CurSearch", _multi_2(_SEARCH_FG, {bg=_SECTION_40}))  -- Searched, selected text
 vim.api.nvim_set_hl(0, "Cursor", _REVERSE)
 vim.api.nvim_set_hl(0, "Define", _STATEMENT)
 vim.api.nvim_set_hl(0, "DiffAdd", _multi_2(_NOTE_10_FG, {bg=_GREEN_30, ctermbg=65}))
@@ -168,7 +169,7 @@ vim.api.nvim_set_hl(0, "PreProc", _STATEMENT)
 vim.api.nvim_set_hl(0, "Question", _NOTE_10_FG)
 vim.api.nvim_set_hl(0, "QuickFixLine", _multi_2(_SEARCH_FG, _SEARCH_BG))
 vim.api.nvim_set_hl(0, "Repeat", _STATEMENT)
-vim.api.nvim_set_hl(0, "Search", _multi_2(_SEARCH_FG, _TITLE_BG))  -- Matching search text
+vim.api.nvim_set_hl(0, "Search", _multi_2(_SEARCH_FG, _TITLE_BG))  -- Searched, non-selected text
 vim.api.nvim_set_hl(0, "SignColumn", _BG)
 vim.api.nvim_set_hl(0, "Special", _KHAKI_GREEN)
 vim.api.nvim_set_hl(0, "SpecialComment", _KHAKI_GREEN)
