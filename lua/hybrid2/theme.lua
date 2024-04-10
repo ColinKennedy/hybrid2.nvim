@@ -71,7 +71,11 @@ local _COOL_BLUE_20 = "#005f5f"
 local _ACCENT_ATTENTION_NORMAL = "#d7ffaf"
 local _ACCENT_DEEP_BLUE_10 = "#00005f"
 local _ACCENT_COOL_GRAY = "#5f5f87"
-local _ACCENT_CRITICAL_10 = "#FF4400"
+local _ACCENT_INFO_50 = "DeepSkyBlue2"
+local _ACCENT_ERROR_50 = "#ff2211"
+local _ACCENT_WARNING_50 = "#ffcc00"
+
+local _ACCENT_CRITICAL_30 = "#FF4400"
 
 -- Controller Variables - Colors
 local _BLACK_30_BG = {bg=_BLACK_30, ctermbg=235}
@@ -109,7 +113,7 @@ local _NOTE_DIFF_ADD_10_FG = _NOTE_10_FG
 local _SEARCH_BG = {bg=_BLACK_50, ctermbg=234}
 local _SEARCH_FG = {fg=_BLACK_50, ctermfg=234}
 local _SPECIAL_GRAY_FG = {fg=_GRAY_50, ctermfg=238}
-local _SPECIAL_VARIABLE = {fg=_ACCENT_CRITICAL_10, ctermfg=96}
+local _SPECIAL_VARIABLE = {fg=_ACCENT_CRITICAL_30, ctermfg=96}
 local _STATEMENT = {fg=_COOL_BLUE_10, ctermfg=109}
 local _TITLE_BG = {bg=_SECTION_30, ctermbg=222}
 local _TITLE_FG = {fg=_SECTION_30, ctermfg=222}
@@ -200,6 +204,11 @@ vim.api.nvim_set_hl(0, "WinBar", _BOLD)
 vim.api.nvim_set_hl(0, "WinBarNC", {link="WinBar"})
 vim.api.nvim_set_hl(0, "WinSeparator", _VERT_SPLIT_FG)
 
+vim.api.nvim_set_hl(0, "DiagnosticError", {fg=_ACCENT_ERROR_50})
+vim.api.nvim_set_hl(0, "DiagnosticWarning", {fg=_ACCENT_WARNING_50})
+vim.api.nvim_set_hl(0, "DiagnosticHint", {fg=_GRAY_10})
+vim.api.nvim_set_hl(0, "DiagnosticInfo", {fg=_ACCENT_INFO_50})
+
 -- Disable LSP underlining. I already use virtual text so there's no need for
 -- distracting underlines as well.
 --
@@ -227,6 +236,7 @@ vim.api.nvim_set_hl(0, "@markup.link", _SPECIAL_VARIABLE)
 vim.api.nvim_set_hl(0, "@markup.raw", _STATEMENT)
 vim.api.nvim_set_hl(0, "@module", _COMMENT)
 vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
+vim.api.nvim_set_hl(0, "@comment.documentation", {link="@string.documentation"})
 vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
 vim.api.nvim_set_hl(0, "@string.special.url", _SPECIAL_VARIABLE)
 vim.api.nvim_set_hl(0, "@text.uri", {link="@string.special.url"})
