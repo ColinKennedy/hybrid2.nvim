@@ -69,6 +69,7 @@ local _COOL_BLUE_20 = "#005f5f"
 
 -- Special purpose, "don't use these too often" colors
 local _ACCENT_ATTENTION_NORMAL = "#d7ffaf"
+local _ACCENT_BRIGHT_WHITE_10 = "#cccccc"
 local _ACCENT_DEEP_BLUE_10 = "#00005f"
 local _ACCENT_COOL_GRAY = "#5f5f87"
 local _ACCENT_INFO_50 = "DeepSkyBlue2"
@@ -204,11 +205,6 @@ vim.api.nvim_set_hl(0, "WinBar", _BOLD)
 vim.api.nvim_set_hl(0, "WinBarNC", {link="WinBar"})
 vim.api.nvim_set_hl(0, "WinSeparator", _VERT_SPLIT_FG)
 
-vim.api.nvim_set_hl(0, "DiagnosticError", {fg=_ACCENT_ERROR_50})
-vim.api.nvim_set_hl(0, "DiagnosticWarning", {fg=_ACCENT_WARNING_50})
-vim.api.nvim_set_hl(0, "DiagnosticHint", {fg=_GRAY_10})
-vim.api.nvim_set_hl(0, "DiagnosticInfo", {fg=_ACCENT_INFO_50})
-
 -- Disable LSP underlining. I already use virtual text so there's no need for
 -- distracting underlines as well.
 --
@@ -217,6 +213,12 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo", _NONE)
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint", _NONE)
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", _NONE)
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineOk", _NONE)
+
+-- Adding diagnostic colors (it makes lualine look better)
+vim.api.nvim_set_hl(0, "DiagnosticError", {fg=_ACCENT_ERROR_50})
+vim.api.nvim_set_hl(0, "DiagnosticWarning", {fg=_ACCENT_WARNING_50})
+vim.api.nvim_set_hl(0, "DiagnosticHint", {fg=_GRAY_10})
+vim.api.nvim_set_hl(0, "DiagnosticInfo", {fg=_ACCENT_INFO_50})
 
 
 -- Quickfix
@@ -258,6 +260,7 @@ vim.api.nvim_set_hl(0, "@markup.heading.5", {fg=_SECTION_50})
 vim.api.nvim_set_hl(0, "@markup.heading.6", {fg=_SECTION_60})
 -- Neovim 0.10+ ships Python queries that break backwards compatibility
 vim.api.nvim_set_hl(0, "@variable", {link="Identifier"})
+vim.api.nvim_set_hl(0, "@variable.parameter", {fg=_ACCENT_BRIGHT_WHITE_10, bold=true})
 
 -- Plugin - https://github.com/airblade/vim-gitgutter
 vim.api.nvim_set_hl(0, "GitGutterAdd", _NOTE_DIFF_ADD_10_FG)
