@@ -205,6 +205,10 @@ vim.api.nvim_set_hl(0, "WinBar", _BOLD)
 vim.api.nvim_set_hl(0, "WinBarNC", {link="WinBar"})
 vim.api.nvim_set_hl(0, "WinSeparator", _VERT_SPLIT_FG)
 
+-- Advanced LSP features that seemed to look nice
+vim.api.nvim_set_hl(0, "LspCodeLens", {link="Normal"})
+vim.api.nvim_set_hl(0, "LspInlayHint", {link="Comment"})
+
 -- Disable LSP underlining. I already use virtual text so there's no need for
 -- distracting underlines as well.
 --
@@ -233,31 +237,37 @@ vim.api.nvim_set_hl(0, "QuickFixLine", {link="Search"})
 -- https://github.com/nvim-treesitter/nvim-treesitter
 --
 vim.api.nvim_set_hl(0, "@attribute", {link="Function"})
-vim.api.nvim_set_hl(0, "@function.builtin", _KNOWN_VARIABLE)
-vim.api.nvim_set_hl(0, "@markup.link", _SPECIAL_VARIABLE)
-vim.api.nvim_set_hl(0, "@markup.raw", _STATEMENT)
-vim.api.nvim_set_hl(0, "@module", _COMMENT)
-vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
-vim.api.nvim_set_hl(0, "@comment.documentation", {link="@string.documentation"})
-vim.api.nvim_set_hl(0, "@string.documentation", _KHAKI_GREEN)
-vim.api.nvim_set_hl(0, "@string.special.url", _SPECIAL_VARIABLE)
-vim.api.nvim_set_hl(0, "@text.uri", {link="@string.special.url"})
-vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
-
--- nvim-treesitter - Language Specific
 vim.api.nvim_set_hl(0, "@character.cpp", {link="String"})
+vim.api.nvim_set_hl(0, "@comment.documentation", {link="@string.documentation"})
 vim.api.nvim_set_hl(0, "@diff.add.diff", {link="DiffAdd"})
 vim.api.nvim_set_hl(0, "@diff.delete.diff", {link="DiffDelete"})
 vim.api.nvim_set_hl(0, "@diff.minus.diff", {link="DiffDelete"})
 vim.api.nvim_set_hl(0, "@diff.plus.diff", {link="DiffAdd"})
-vim.api.nvim_set_hl(0, "@text.diff.add.diff", {link="DiffAdd"})
-vim.api.nvim_set_hl(0, "@text.diff.delete.diff", {link="DiffDelete"})
+vim.api.nvim_set_hl(0, "@function.builtin", _KNOWN_VARIABLE)
+vim.api.nvim_set_hl(0, "@lsp.mod.readonly", {link="Constant"})
 vim.api.nvim_set_hl(0, "@markup.heading.1", {fg=_SECTION_10})
 vim.api.nvim_set_hl(0, "@markup.heading.2", {fg=_SECTION_20})
 vim.api.nvim_set_hl(0, "@markup.heading.3", {fg=_SECTION_30})
 vim.api.nvim_set_hl(0, "@markup.heading.4", {fg=_SECTION_40})
 vim.api.nvim_set_hl(0, "@markup.heading.5", {fg=_SECTION_50})
 vim.api.nvim_set_hl(0, "@markup.heading.6", {fg=_SECTION_60})
+vim.api.nvim_set_hl(0, "@markup.link", _SPECIAL_VARIABLE)
+vim.api.nvim_set_hl(0, "@markup.raw", _STATEMENT)
+vim.api.nvim_set_hl(0, "@module", _COMMENT)
+vim.api.nvim_set_hl(0, "@punctuation", _WHITE_FG)
+vim.api.nvim_set_hl(0, "@string.documentation", {link="String"})
+vim.api.nvim_set_hl(0, "@string.special.url", _SPECIAL_VARIABLE)
+vim.api.nvim_set_hl(0, "@text.diff.add.diff", {link="DiffAdd"})
+vim.api.nvim_set_hl(0, "@text.diff.delete.diff", {link="DiffDelete"})
+vim.api.nvim_set_hl(0, "@text.uri", {link="@string.special.url"})
+vim.api.nvim_set_hl(0, "@variable.builtin", _KNOWN_VARIABLE)
+
+-- LSP Semantic Tokens
+vim.api.nvim_set_hl(0, "@lsp.typemod.function.defaultLibrary", {link="@function.builtin"})
+-- NOTE: This looks good in Lua. Maybe it'd look good in other languages?
+vim.api.nvim_set_hl(0, "@lsp.typemod.keyword.documentation.lua", {link="@string.documentation"})
+
+
 -- Neovim 0.10+ ships Python queries that break backwards compatibility
 vim.api.nvim_set_hl(0, "@variable", {link="Identifier"})
 vim.api.nvim_set_hl(0, "@variable.parameter", {fg=_ACCENT_BRIGHT_WHITE_10, bold=true})
