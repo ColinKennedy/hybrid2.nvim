@@ -167,7 +167,7 @@ vim.api.nvim_set_hl(0, "Normal", _multi_2(_BG, _WHITE_FG))  -- BG color
 vim.api.nvim_set_hl(0, "NormalFloat", _BG_DARKER_20)  -- Floating BG color
 vim.api.nvim_set_hl(0, "Number", _CONSTANT_FG)
 vim.api.nvim_set_hl(0, "Operator", _STATEMENT)
-vim.api.nvim_set_hl(0, "Pmenu", _multi_2(_GRAY_20_FG, _MENU_GRAY_BG))
+vim.api.nvim_set_hl(0, "Pmenu", {link="NormalFloat"})
 vim.api.nvim_set_hl(0, "PmenuSel", _multi_2(_BG_AS_FG, _WHITE_BG))
 vim.api.nvim_set_hl(0, "PreCondit", _STATEMENT)
 vim.api.nvim_set_hl(0, "PreProc", _STATEMENT)
@@ -184,7 +184,6 @@ vim.api.nvim_set_hl(0, "SpellCap", _multi_3(_CYAN_10_FG, _ACCENT_BLUE_50_BG, _UN
 vim.api.nvim_set_hl(0, "SpellLocal", _multi_3(_CYAN_10_FG, _CYAN_30_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "SpellRare", _multi_3(_PURPLE_20_FG, _PURPLE_50_BG, _UNDERLINE))
 vim.api.nvim_set_hl(0, "Statement", _STATEMENT)
-vim.api.nvim_set_hl(0, "StatusLine", _multi_3(_COMMENT, _SEARCH_BG, _REVERSE))
 vim.api.nvim_set_hl(0, "StatusLineNC", _multi_3(_VERT_SPLIT_FG, _LINE_GRAY_BG, _REVERSE))
 vim.api.nvim_set_hl(0, "StorageClass", _TYPE)
 vim.api.nvim_set_hl(0, "String", _KHAKI_GREEN)
