@@ -272,6 +272,12 @@ vim.api.nvim_set_hl(0, "@lsp.typemod.keyword.documentation.lua", {link="@string.
 vim.api.nvim_set_hl(0, "@variable", {link="Identifier"})
 vim.api.nvim_set_hl(0, "@variable.parameter", {fg=_ACCENT_BRIGHT_WHITE_10, bold=true})
 
+-- Miscellaneous: Highlight non-auto-completed text (make it look like virtual text)
+--
+-- e.g. Ctrl-X + Ctrl-L and then select an entry to view the effect.
+--
+vim.api.nvim_set_hl(0, "ComplMatchIns", {link="Comment"})
+
 -- Plugin - https://github.com/airblade/vim-gitgutter
 vim.api.nvim_set_hl(0, "GitGutterAdd", _NOTE_DIFF_ADD_10_FG)
 vim.api.nvim_set_hl(0, "GitGutterChange", _DIFF_CHANGE_FG)
