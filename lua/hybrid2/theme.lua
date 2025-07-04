@@ -33,7 +33,6 @@ end
 vim.cmd[[set background=dark]]
 
 -- General Palette. Make sure these colors look good!
-local _BLACK_20 = "#2c323c"
 local _BLACK_30 = "#282a2e"
 local _BLACK_50 = "#1d1f21"
 
@@ -100,7 +99,7 @@ local _BG_DARKER_20 = {ctermbg=16, bg="#111111"}  -- Like _BG, but much darker
 local _BG_AS_FG = {fg=_BLACK_50, ctermfg=234}
 local _COMMENT = {fg=_GRAY_20, ctermfg=243}
 local _CONSTANT_FG = {fg=_RED_10, ctermfg=167}
-local _CURSOR_GRAY_FG = {fg=_BLACK_20, ctermfg=236}
+local _CURSOR_GRAY_FG = {fg=_GRAY_50, ctermfg=236}
 local _DIFF_CHANGE_FG = {fg=_PURPLE_10, ctermfg=189}
 local _ERROR_50_BG = {bg=_RED_20, ctermbg=52}
 local _ERROR_BG = {bg=_RED_10, ctermbg=167}
