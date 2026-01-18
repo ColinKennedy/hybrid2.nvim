@@ -45,7 +45,8 @@ local _GRAY_50 = "#373b41"
 
 -- Used for errors
 local _RED_10 = "#cc6666"
-local _RED_20 = "#5f0000"
+local _RED_20 = "#a34040"
+local _RED_30 = "#5f0000"
 
 -- Colors that denote "sections"
 local _SECTION_10 = "#de935f"
@@ -57,7 +58,8 @@ local _SECTION_60 = "#ffffff"
 
 -- "Base" colors, used for "normal" situations
 local _GREEN_10 = "#b5bd68"
-local _GREEN_30 = "#5f875f"
+local _GREEN_30 = "#4f694f"
+local _GREEN_30 = "#3e4f3e"
 
 -- Typically used for "builtin" colors
 local _PURPLE_10 = "#d7d7ff"
@@ -101,8 +103,8 @@ local _COMMENT = {fg=_GRAY_20, ctermfg=243}
 local _CONSTANT_FG = {fg=_RED_10, ctermfg=167}
 local _CURSOR_GRAY_FG = {fg=_GRAY_50, ctermfg=236}
 local _DIFF_CHANGE_FG = {fg=_PURPLE_10, ctermfg=189}
-local _ERROR_50_BG = {bg=_RED_20, ctermbg=52}
-local _ERROR_BG = {bg=_RED_10, ctermbg=167}
+local _ERROR_50_BG = {bg=_RED_30, ctermbg=52}
+local _ERROR_BG = {bg=_RED_20, ctermbg=167}
 local _ERROR_FG = {fg=_RED_10, ctermfg=167}
 local _KNOWN_VARIABLE = {fg=_PURPLE_30, ctermfg=216}  -- LightSalmon1
 local _LINE_GRAY_BG = {bg=_GRAY_20, ctermbg=243}
